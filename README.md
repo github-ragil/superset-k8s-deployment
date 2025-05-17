@@ -23,6 +23,7 @@ This repository provides automated scripts to deploy:
 ```bash
 git clone https://github.com/your-username/superset-k8s-deployment.git
 cd superset-k8s-deployment
+```
 2. Make scripts executable
 bash
 chmod +x setup-k8s.sh setup-superset-nginx.sh
