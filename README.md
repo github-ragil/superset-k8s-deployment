@@ -34,7 +34,7 @@ chmod +x setup-k8s.sh setup-superset-nginx.sh
 Verify all pods are running:
 
 ```bash
-kubectl get pods -A -w
+kubectl get pods -A
 ```
 Wait until all pods show "Running" status
 
