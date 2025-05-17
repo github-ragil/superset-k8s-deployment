@@ -40,8 +40,8 @@ bootstrapScript: |
     build-essential \\
     pkg-config
   # Install required Python packages
-  pip install \\
-    sqlalchemy==1.4.48 \\
+  pip install \\   
+    sqlalchemy==1.4.48 \\ # <-- Your desired pip install
     flask-appbuilder==4.5.0 \\
     marshmallow-sqlalchemy==0.28.2 \\
     authlib \\
