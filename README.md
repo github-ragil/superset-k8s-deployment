@@ -48,15 +48,15 @@ After successful installation, access via:
 
 Direct NodePort:
 
-http://<your-server-ip>:30037
+http://ip-public:30037
+
 Through Nginx (Recommended):
 
-http://<your-server-ip>
+http://ip-public
 
 Default admin credentials:
 
 Username: admin
-
 Password: admin
 
 🔍 Verification Commands
