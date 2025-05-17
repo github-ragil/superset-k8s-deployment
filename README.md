@@ -18,7 +18,7 @@ This repository provides automated scripts to deploy:
 
 ### 1. Clone this repository
 ```bash
-git clone https://github.com/your-username/superset-k8s-deployment.git
+git clone https://github.com/github-ragil/superset-k8s-deployment.git
 cd superset-k8s-deployment
 ```
 2. Make scripts executable
