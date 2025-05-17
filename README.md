@@ -57,6 +57,7 @@ http://ip-public
 Default admin credentials:
 
 Username: admin
+
 Password: admin
 
 🔍 Verification Commands
