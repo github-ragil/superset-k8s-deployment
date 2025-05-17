@@ -9,7 +9,7 @@ This repository provides automated scripts to deploy:
 
 ## 📋 Prerequisites
 
-- **OS**: Ubuntu 20.04/22.04 or Debian 11/12
+- **OS**: Ubuntu 24.04 
 - **Resources**: Minimum 4GB RAM, 2 CPU cores, 40GB disk
 - **Permissions**: Root/sudo access
 - **Internet Connection without Proxy**
