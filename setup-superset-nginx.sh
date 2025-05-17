@@ -25,7 +25,7 @@ service:
 # Database configuration
 postgresql:
   postgresqlUsername: supersetpostgres
-  postgresqlPassword: SuperPGadmin@2024
+  postgresqlPassword: SuperPGadmin@2024 # <-- Your desired Password
   postgresqlDatabase: superset
 configOverrides:
   secret: |
