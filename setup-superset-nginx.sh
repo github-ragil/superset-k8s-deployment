@@ -34,22 +34,25 @@ bootstrapScript: |
   #!/bin/bash
   
   # Install system-level dependencies
-  apt-get update && apt-get install -y \\
-    python3-dev \\
-    default-libmysqlclient-dev \\
-    build-essential \\
+  apt-get update && apt-get install -y \
+    python3-dev \
+    libpq-dev \
+    default-libmysqlclient-dev \
+    build-essential \
     pkg-config
-  # Install required Python packages
-  pip install \\   
-    sqlalchemy==1.4.48 \\ # <-- Your desired pip install
-    flask-appbuilder==4.5.0 \\
-    marshmallow-sqlalchemy==0.28.2 \\
-    authlib \\
-    psycopg2-binary \\
-    mysqlclient \\
-    clickhouse-connect \\
-    clickhouse-driver>=0.2.0 \\
+    
+  # Install required Python packages - Your desired Pythom Module as needed
+  pip install \
+    psycopg2-binary==2.9.9 \   
+    sqlalchemy==1.4.48 \
+    flask-appbuilder==4.5.0 \
+    marshmallow-sqlalchemy==0.28.2 \
+    authlib \
+    mysqlclient \
+    clickhouse-connect \
+    clickhouse-driver>=0.2.0 \
     clickhouse-sqlalchemy>=0.1.6
+
   # Create bootstrap file if it doesn't exist
   if [ ! -f ~/bootstrap ]; then
     echo "Running Superset with uid {{ .Values.runAsUser }}" > ~/bootstrap
