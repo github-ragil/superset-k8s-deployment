@@ -21,13 +21,13 @@ This repository provides automated scripts to deploy:
 git clone https://github.com/github-ragil/superset-k8s-deployment.git
 cd superset-k8s-deployment
 ```
-2. Make scripts executable
+### 2. Make scripts executable
 ```bash
 chmod +x setup-k8s.sh setup-superset-nginx.sh
 ```
 
-3. Run the deployment (two-step process)
-Step 1: Kubernetes Setup
+### 3. Run the deployment (two-step process)
+# Step 1: Kubernetes Setup
 ```bash
 ./setup-k8s.sh
 ```
@@ -38,30 +38,30 @@ kubectl get pods -A -w
 ```
 Wait until all pods show "Running" status
 
-Step 2: Superset + Nginx Installation
+# Step 2: Superset + Nginx Installation
 ```bash
 ./setup-superset-nginx.sh
 ```
 
 🌐 Accessing Superset
-After successful installation, access via:
+# After successful installation, access via:
 
-Direct NodePort:
+# Direct NodePort:
 
 http://ip-public:30037
 
-Through Nginx (Recommended):
+# Through Nginx (Recommended):
 
 http://ip-public
 
-Default admin credentials:
+# Default admin credentials:
 
 Username: admin
 
 Password: admin
 
 🔍 Verification Commands
-Check all components:
+# Check all components:
 
 # Check pods
 ```bash
