@@ -10,12 +10,9 @@ This repository provides automated scripts to deploy:
 ## 📋 Prerequisites
 
 - **OS**: Ubuntu 20.04/22.04 or Debian 11/12
-- **Resources**: Minimum 4GB RAM, 2 CPU cores, 20GB disk
+- **Resources**: Minimum 4GB RAM, 2 CPU cores, 40GB disk
 - **Permissions**: Root/sudo access
-- **Software**:
-  - Docker (20.10.10+)
-  - kubectl (1.24+)
-  - curl
+- **Internet Connection without Proxy**
 
 ## 🚀 Quick Start
 
@@ -25,21 +22,27 @@ git clone https://github.com/your-username/superset-k8s-deployment.git
 cd superset-k8s-deployment
 ```
 2. Make scripts executable
-bash
+```bash
 chmod +x setup-k8s.sh setup-superset-nginx.sh
+```
+
 3. Run the deployment (two-step process)
 Step 1: Kubernetes Setup
-bash
+```bash
 ./setup-k8s.sh
+```
 Verify all pods are running:
 
-bash
+```bash
 kubectl get pods -A -w
-(Wait until all pods show "Running" status)
+```
+Wait until all pods show "Running" status
 
 Step 2: Superset + Nginx Installation
-bash
+```bash
 ./setup-superset-nginx.sh
+```
+
 🌐 Accessing Superset
 After successful installation, access via:
 
@@ -49,6 +52,7 @@ http://<your-server-ip>:30037
 Through Nginx (Recommended):
 
 http://<your-server-ip>
+
 Default admin credentials:
 
 Username: admin
@@ -58,38 +62,51 @@ Password: admin
 🔍 Verification Commands
 Check all components:
 
-bash
 # Check pods
+```bash
 kubectl get pods -A
-
+```
 # Check services
+```bash
 kubectl get svc -A
+```
 
 # Check persistent volumes
+```bash
 kubectl get pv,pvc -A
+```
+
 🛠️ Troubleshooting
 Common issues and fixes:
 
 Nginx not starting:
 
-bash
+```bash
 kubectl logs nginx-reverse-proxy -n default
+```
+
 Superset pods crashing:
 
-bash
+```bash
 kubectl logs -n superset <superset-pod-name> --previous
+```
 Port conflicts:
 
-bash
+```bash
 sudo netstat -tulnp | grep -E '80|30037'
+```
 🧹 Cleanup
 To completely remove the deployment:
 
-bash
+
 # Remove Superset
+```bash
 helm uninstall superset -n superset
 kubectl delete namespace superset
+```
 
 # Remove Nginx
-kubectl delete pod nginx-reverse-proxy -n default
-kubectl delete configmap nginx-config -n default
+```bash
+kubectl delete pod nginx-reverse-proxy -n nginx
+kubectl delete configmap nginx-config -n nginx
+```
