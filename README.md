@@ -1,4 +1,3 @@
-markdown
 # Kubernetes Superset Deployment with Nginx Reverse Proxy
 
 ![Superset Logo](https://superset.apache.org/img/superset-logo-horiz-apache.svg)
