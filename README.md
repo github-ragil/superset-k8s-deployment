@@ -43,8 +43,8 @@ Step 2: Superset + Nginx Installation
 ./setup-superset-nginx.sh
 ```
 
-🌐 Accessing Superset
-# After successful installation, access via:
+# 🌐 Accessing Superset
+After successful installation, access via:
 
 Direct NodePort:
 
@@ -60,8 +60,8 @@ Username: admin
 
 Password: admin
 
-🔍 Verification Commands
-# Check all components:
+# 🔍 Verification Commands
+Check all components:
 
 Check pods
 ```bash
@@ -77,7 +77,7 @@ Check persistent volumes
 kubectl get pv,pvc -A
 ```
 
-🛠️ Troubleshooting
+# 🛠️ Troubleshooting
 Common issues and fixes:
 
 Nginx not starting:
@@ -96,17 +96,17 @@ Port conflicts:
 ```bash
 sudo netstat -tulnp | grep -E '80|30037'
 ```
-🧹 Cleanup
+# 🧹 Cleanup
 To completely remove the deployment:
 
 
-# Remove Superset
+Remove Superset
 ```bash
 helm uninstall superset -n superset
 kubectl delete namespace superset
 ```
 
-# Remove Nginx
+Remove Nginx
 ```bash
 kubectl delete pod nginx-reverse-proxy -n nginx
 kubectl delete configmap nginx-config -n nginx
