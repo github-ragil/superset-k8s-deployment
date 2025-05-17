@@ -1,4 +1,4 @@
-# Kubernetes Superset Deployment with Nginx Reverse Proxy
+# Kubernetes Superset Deployment with Kubernetes K8s and Nginx Reverse Proxy
 
 ![Superset Logo](https://superset.apache.org/img/superset-logo-horiz-apache.svg)
 
@@ -10,7 +10,7 @@ This repository provides automated scripts to deploy:
 ## 📋 Prerequisites
 
 - **OS**: Ubuntu 24.04 
-- **Resources**: Minimum 4GB RAM, 2 CPU cores, 40GB disk
+- **Resources**: 1 Node, Minimum 4GB RAM, 2 CPU cores, 40GB disk
 - **Permissions**: Root/sudo access
 - **Internet Connection without Proxy**
 
